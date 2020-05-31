@@ -36,11 +36,7 @@ namespace GestionFacturation
             // Add EntityFramework support for SqlServer.
             services.AddEntityFrameworkSqlServer();
             // Add ApplicationDbContext.
-            services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(
-            Configuration.GetConnectionString("DefaultConnection")
-            )
-            );
+            services.AddDbContext<ApplicationDbContext>();
 
 
         }
@@ -87,6 +83,10 @@ namespace GestionFacturation
                     spa.UseAngularCliServer(npmScript: "start");
                 }
             });
+            app.UseCors(builder => builder
+            .AllowAnyHeader()
+            .AllowAnyMethod()
+            .AllowAnyOrigin());
         }
         
     }

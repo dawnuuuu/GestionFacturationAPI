@@ -21,6 +21,7 @@ namespace GestionFacturation.Data.Models
         public string Telephone { get; set; }
         public string Username { get; set; }
         public string Adresse { get; set; }
+        public string Type { get; set; }
 
 
 

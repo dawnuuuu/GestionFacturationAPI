@@ -10,25 +10,19 @@ using System.Text.Json.Serialization;
 
 namespace GestionFacturation.Data.Models
 {
+
+    public class Rootobject2
+    {
+        public Devis Devis { get; set; }
+    }
+
     public class Devis
     {
-        public Devis()
-        {
-        }
         [Key]
-        [Required]
-        public int Id { get; set; }
+        public int id { get; set; }
         public string NomClient { get; set; }
-        public DateTime DateCommande { get; }
-
-        public DateTime DateLivraison { get; }
-        public IList<Article> Articles { get; set; }
-        [ForeignKey("Client")]
         public int ClientId { get; set; }
-        [ForeignKey("Produit")]
-        public int ProduitId { get; set; }
-
-
+        public Article Articles { get; set; }
     }
 
     public class Article
@@ -36,6 +30,6 @@ namespace GestionFacturation.Data.Models
         public int Id { get; set; }
         public string Nom { get; set; }
         public float PrixTTC { get; set; }
-
     }
+
 }

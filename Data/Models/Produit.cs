@@ -9,28 +9,30 @@ using System.Text.Json.Serialization;
 
 namespace GestionFacturation.Data.Models
 {
+    public class Rootobject
+    {
+        public Produit produit { get; set; }
+    }
+
     public class Produit
     {
-        public Produit()
-        {
-        }
         [Key]
         [Required]
-        public int Id { get; set; }
-        public IList<Categorie> Categories { get; set; }
-        public IList<Stock> Stocks { get; set; }
-
+        public int id { get; set; }
+        public Categorie categorie { get; set; }
+        public Stock stock { get; set; }
     }
+
     public class Categorie
     {
-        public string Nom { get; set; }
-        public int Code { get; set; }
-        
+        public int id { get; set; }
+        public string nom { get; set; }
+        public int code { get; set; }
     }
+
     public class Stock
     {
-        public int Id { get; set; }
-        public float Quantite { get; set; }
-
+        public int id { get; set; }
+        public int quantite { get; set; }
     }
 }
