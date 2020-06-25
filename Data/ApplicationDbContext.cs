@@ -11,6 +11,7 @@ namespace GestionFacturation.Data
         public DbSet<Produit> Produits { get; set; }
         public DbSet<Utilisateur> Utilisateurs { get; set; }
 
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlite("Data Source=GestionFacturation.db");

@@ -12,6 +12,9 @@ using GestionFacturation.Data.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Newtonsoft.Json;
 using System.Collections.Generic;
+using System.Text;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
 
 namespace GestionFacturation
 {
@@ -28,13 +31,12 @@ namespace GestionFacturation
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
+            
             // In production, the Angular files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/dist";
             });
-            // Add EntityFramework support for SqlServer.
-            services.AddEntityFrameworkSqlServer();
             // Add ApplicationDbContext.
             services.AddDbContext<ApplicationDbContext>();
 

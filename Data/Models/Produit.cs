@@ -21,6 +21,8 @@ namespace GestionFacturation.Data.Models
         public int id { get; set; }
         public Categorie categorie { get; set; }
         public Stock stock { get; set; }
+        public byte[] Image { get; set; }
+
     }
 
     public class Categorie

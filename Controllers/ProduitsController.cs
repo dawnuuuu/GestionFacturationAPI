@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using GestionFacturation.Data;
 using GestionFacturation.Data.Models;
+using System.Collections;
 
 namespace GestionFacturation.Controllers
 {
@@ -22,10 +23,28 @@ namespace GestionFacturation.Controllers
         }
 
         // GET: api/Produits
+        //De facon a ce que l'API retourne les produits qui sont en stock + supporte un nombre limite des resultats
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<Produit>>> GetProduits()
+        public async Task<ActionResult<IEnumerable>> GetProduits(bool? inStock, int? skip, int? take)
         {
-            return await _context.Produits.ToListAsync();
+            var products = _context.Produits.AsQueryable();
+
+            if (inStock != null) // Adds the condition to check availability 
+            {
+                products = _context.Produits.Where(i => i.stock.quantite > 0);
+            }
+
+            if (skip != null)
+            {
+                products = products.Skip((int)skip);
+            }
+
+            if (take != null)
+            {
+                products = products.Take((int)take);
+            }
+
+            return await products.ToListAsync();
         }
 
         // GET: api/Produits/5

@@ -108,10 +108,11 @@ namespace GestionFacturation.Data.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     Nom = table.Column<string>(nullable: true),
                     Prenom = table.Column<string>(nullable: true),
+                    UserName = table.Column<string>(nullable: true),
                     Telephone = table.Column<string>(nullable: true),
-                    Username = table.Column<string>(nullable: true),
                     Adresse = table.Column<string>(nullable: true),
-                    Type = table.Column<string>(nullable: true)
+                    Type = table.Column<string>(nullable: true),
+                    Password = table.Column<string>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -146,7 +147,8 @@ namespace GestionFacturation.Data.Migrations
                     id = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     categorieid = table.Column<int>(nullable: true),
-                    stockid = table.Column<int>(nullable: true)
+                    stockid = table.Column<int>(nullable: true),
+                    Image = table.Column<byte[]>(nullable: true)
                 },
                 constraints: table =>
                 {

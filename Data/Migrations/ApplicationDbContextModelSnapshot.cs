@@ -159,6 +159,9 @@ namespace GestionFacturation.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<byte[]>("Image")
+                        .HasColumnType("BLOB");
+
                     b.Property<int?>("categorieid")
                         .HasColumnType("INTEGER");
 
@@ -200,6 +203,9 @@ namespace GestionFacturation.Data.Migrations
                     b.Property<string>("Nom")
                         .HasColumnType("TEXT");
 
+                    b.Property<string>("Password")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Prenom")
                         .HasColumnType("TEXT");
 
@@ -209,7 +215,7 @@ namespace GestionFacturation.Data.Migrations
                     b.Property<string>("Type")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Username")
+                    b.Property<string>("UserName")
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
