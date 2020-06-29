@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace GestionFacturation.Data.Migrations
 {
-    public partial class Initial : Migration
+    public partial class InitialCreate : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -112,7 +112,8 @@ namespace GestionFacturation.Data.Migrations
                     Telephone = table.Column<string>(nullable: true),
                     Adresse = table.Column<string>(nullable: true),
                     Type = table.Column<string>(nullable: true),
-                    Password = table.Column<string>(nullable: true)
+                    PasswordHash = table.Column<byte[]>(nullable: true),
+                    PasswordSalt = table.Column<byte[]>(nullable: true)
                 },
                 constraints: table =>
                 {

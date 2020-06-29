@@ -23,9 +23,10 @@ namespace GestionFacturation.Data.Models
         
         public string Adresse { get; set; }
         public string Type { get; set; }
-        public string Password { get; set; }
+        public byte[] PasswordHash { get; set; }
+        public byte[] PasswordSalt { get; set; }
 
-        
+
 
 
 

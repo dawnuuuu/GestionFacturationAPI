@@ -36,5 +36,6 @@ namespace GestionFacturation.Data.Models
     {
         public int id { get; set; }
         public int quantite { get; set; }
+
     }
 }

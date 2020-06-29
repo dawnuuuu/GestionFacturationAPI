@@ -27,24 +27,24 @@ namespace GestionFacturation.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable>> GetProduits(bool? inStock, int? skip, int? take)
         {
-            var products = _context.Produits.AsQueryable();
+            var produits = _context.Produits.AsQueryable();
 
             if (inStock != null) // Adds the condition to check availability 
             {
-                products = _context.Produits.Where(i => i.stock.quantite > 0);
+                produits = _context.Produits.Where(i => i.stock.quantite > 0);
             }
 
             if (skip != null)
             {
-                products = products.Skip((int)skip);
+                produits = produits.Skip((int)skip);
             }
 
             if (take != null)
             {
-                products = products.Take((int)take);
+                produits = produits.Take((int)take);
             }
 
-            return await products.ToListAsync();
+            return await produits.ToListAsync();
         }
 
         // GET: api/Produits/5

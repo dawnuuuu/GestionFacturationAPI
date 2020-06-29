@@ -203,8 +203,11 @@ namespace GestionFacturation.Data.Migrations
                     b.Property<string>("Nom")
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("Password")
-                        .HasColumnType("TEXT");
+                    b.Property<byte[]>("PasswordHash")
+                        .HasColumnType("BLOB");
+
+                    b.Property<byte[]>("PasswordSalt")
+                        .HasColumnType("BLOB");
 
                     b.Property<string>("Prenom")
                         .HasColumnType("TEXT");
