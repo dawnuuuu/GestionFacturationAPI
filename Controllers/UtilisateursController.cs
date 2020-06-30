@@ -20,7 +20,7 @@ using GestionFacturation.Services;
 namespace GestionFacturation.Controllers
 {
     [Authorize]
-    [Route("api/[controller]")]
+    [Route("api/Utilisateurs")]
     [ApiController]
     public class UtilisateursController : ControllerBase
     {

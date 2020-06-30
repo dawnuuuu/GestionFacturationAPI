@@ -94,6 +94,9 @@ namespace GestionFacturation.Data.Migrations
                     b.Property<int>("ClientId")
                         .HasColumnType("INTEGER");
 
+                    b.Property<DateTime>("DateLivaraison")
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("NomClient")
                         .HasColumnType("TEXT");
 

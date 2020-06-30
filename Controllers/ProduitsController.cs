@@ -11,7 +11,7 @@ using System.Collections;
 
 namespace GestionFacturation.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Produits")]
     [ApiController]
     public class ProduitsController : ControllerBase
     {

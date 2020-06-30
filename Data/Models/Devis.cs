@@ -23,6 +23,7 @@ namespace GestionFacturation.Data.Models
         public string NomClient { get; set; }
         public int ClientId { get; set; }
         public Article Articles { get; set; }
+        public DateTime DateLivaraison { get; set; }
     }
 
     public class Article

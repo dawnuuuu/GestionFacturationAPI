@@ -128,7 +128,8 @@ namespace GestionFacturation.Data.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     NomClient = table.Column<string>(nullable: true),
                     ClientId = table.Column<int>(nullable: false),
-                    ArticlesId = table.Column<int>(nullable: true)
+                    ArticlesId = table.Column<int>(nullable: true),
+                    DateLivaraison = table.Column<DateTime>(nullable: false)
                 },
                 constraints: table =>
                 {

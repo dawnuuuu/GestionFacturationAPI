@@ -10,7 +10,7 @@ using GestionFacturation.Data.Models;
 
 namespace GestionFacturation.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/Devis")]
     [ApiController]
     public class DevisController : ControllerBase
     {

@@ -9,7 +9,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace GestionFacturation.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20200629155651_InitialCreate")]
+    [Migration("20200630113712_InitialCreate")]
     partial class InitialCreate
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -95,6 +95,9 @@ namespace GestionFacturation.Data.Migrations
 
                     b.Property<int>("ClientId")
                         .HasColumnType("INTEGER");
+
+                    b.Property<DateTime>("DateLivaraison")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("NomClient")
                         .HasColumnType("TEXT");
